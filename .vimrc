@@ -58,6 +58,10 @@ Plugin 'wavded/vim-stylus'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'posva/vim-vue'
 
+" ======== Snippets ========
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -66,6 +70,7 @@ set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'solarized'
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
 
 " ======== NERDTree ========
 let NERDTreeShowLineNumbers = 1
@@ -167,6 +172,11 @@ let g:AutoPairsShortcutJump = '∂' " <M-d>
 
 " ======== Better Whitespace ========
 autocmd BufEnter * EnableStripWhitespaceOnSave
+
+" ======== Snippets ========
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<S-tab>'
 
 " ======== Custom Stuffs ========
 " Replace default <Esc> for more effective typing
