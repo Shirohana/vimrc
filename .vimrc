@@ -76,7 +76,7 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 let NERDTreeShowLineNumbers = 1
 let NERDTreeAutoCenter = 1
 let NERDTreeShowHidden = 1
-let NERDTreeIgnore = ['\~$', 'yarn\.lock']
+let NERDTreeIgnore = ['\~$', 'yarn\.lock', '\.swp', 'node_modules']
 let NERDTreeShowBookmarks = 1
 map <C-\>  :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in = 1
@@ -89,7 +89,7 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 let g:ctrlp_working_path_mode = 'ra'
 " Ignoring (dir|file|link)s
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git)$',
+  \ 'dir':  '\v(\.git|node_modules)$',
   \ 'file': '\v\.(png|jpg)$'
   \ }
 
