@@ -213,8 +213,11 @@ nmap ‘     :bnext<CR>
 " Use <M-h> (Option-h) to move to prev buffer
 nmap <M-[> :bprev<CR>
 nmap “     :bprev<CR>
-" Better way to quit
-nmap <leader>wq  :bp <bar> bd #<CR>
+" Better way to write & quit
+let mapleader = ','
+nmap <leader>w   :w<CR>
+nmap <leader>q   :bp <bar> bd #<CR>
+nmap <leader>W   :w <bar> bp <bar> bd #<CR>
 
 " ======== Windows ========
 " Use <M-[hjkl]> (Option-[hjkl]) to jump to another window in the same direction
@@ -236,6 +239,12 @@ nmap ≠     <C-w>+
 nmap –     <C-w>-
 nmap ≤     <C-w><
 nmap ≥     <C-w>>
+
+" vertical ruler
+set colorcolumn=100
+
+" Disable word wrap
+set nowrap
 
 set hlsearch
 set relativenumber
