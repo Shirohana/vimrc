@@ -61,6 +61,7 @@ Plugin 'posva/vim-vue'
 " ======== Snippets ========
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'isRuslan/vim-es6'
 
 call vundle#end()
 filetype plugin indent on
@@ -73,11 +74,12 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 
 " ======== NERDTree ========
-let NERDTreeShowLineNumbers = 1
-let NERDTreeAutoCenter = 1
-let NERDTreeShowHidden = 1
-let NERDTreeIgnore = ['\~$', 'yarn\.lock', '\.swp', 'node_modules']
-let NERDTreeShowBookmarks = 1
+let g:NERDTreeChDirMode = 2
+let g:NERDTreeShowLineNumbers = 1
+let g:NERDTreeAutoCenter = 1
+let g:NERDTreeShowHidden = 1
+let g:NERDTreeIgnore = ['\~$', 'yarn\.lock', '\.swp', 'node_modules']
+let g:NERDTreeShowBookmarks = 1
 map <C-\>  :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in = 1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -86,7 +88,7 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 " ======== CtrlP ========
 " Using nearest .git directory or current directory if the file is not in a
 " subdirectory of the cwd
-let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_working_path_mode = 'a'
 " Ignoring (dir|file|link)s
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v(\.git|node_modules)$',
@@ -139,7 +141,7 @@ map <CR> <Plug>(easymotion-repeat)
 " just using default key mappings
 " let g:multi_cursor_use_default_mapping = 0
 " let g:multi_cursor_next_key = '<C-n>'
-" let g:multi_cursor_prev_key = '<C-p>'
+let g:multi_cursor_prev_key = '<C-b>'
 " let g:multi_cursor_skip_key = '<C-x>'
 " let g:multi_cursor_quit_key = '<Esc>'
 
