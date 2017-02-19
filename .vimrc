@@ -53,15 +53,16 @@ Plugin 'ntpeters/vim-better-whitespace'
 " Plugin 'tpope/vim-abolish'
 
 " ======== Syntaxs ========
+Plugin 'othree/html5.vim'
 Plugin 'digitaltoad/vim-pug'
 Plugin 'wavded/vim-stylus'
-Plugin 'leafgarland/typescript-vim'
+Plugin 'othree/yajs.vim'
 Plugin 'posva/vim-vue'
+Plugin 'HerringtonDarkholme/yats.vim'
 
 " ======== Snippets ========
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'isRuslan/vim-es6'
 
 call vundle#end()
 filetype plugin indent on
