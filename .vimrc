@@ -255,4 +255,4 @@ set showcmd
 set cursorline
 set backspace=2
 set encoding=utf-8
-
+set scrolloff=2
