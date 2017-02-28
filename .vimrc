@@ -247,10 +247,17 @@ nmap ¬     <C-w>l
 " nmap <M--> <C-w>-
 " nmap <M-,> <C-w><
 " nmap <M-.> <C-w>>
-nmap ≠     <C-w>+
-nmap –     <C-w>-
-nmap ≤     <C-w><
-nmap ≥     <C-w>>
+nmap ≠     2<C-w>+
+nmap –     2<C-w>-
+nmap ≤     3<C-w><
+nmap ≥     3<C-w>>
+
+" Reselect a visual block
+nnoremap vv gv
+
+" Insert new line
+nmap zj  o<Esc>k
+nmap zk  O<Esc>j<C-e>
 
 " vertical ruler
 set colorcolumn=100
