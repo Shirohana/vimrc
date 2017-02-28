@@ -49,6 +49,9 @@ Plugin 'kshenoy/vim-signature'
 " Better Whitespace # better-whitespace.txt
 Plugin 'ntpeters/vim-better-whitespace'
 
+" GitGutter
+Plugin 'airblade/vim-gitgutter'
+
 " Abolish.vim # i cannot drive on this yet
 " Plugin 'tpope/vim-abolish'
 
@@ -56,9 +59,10 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'othree/html5.vim'
 Plugin 'digitaltoad/vim-pug'
 Plugin 'wavded/vim-stylus'
-Plugin 'othree/yajs.vim'
+Plugin 'isRuslan/vim-es6'
 Plugin 'posva/vim-vue'
 Plugin 'HerringtonDarkholme/yats.vim'
+Plugin 'hail2u/vim-css3-syntax'
 
 " ======== Snippets ========
 Plugin 'SirVer/ultisnips'
@@ -175,6 +179,11 @@ let g:AutoPairsShortcutJump = '∂' " <M-d>
 
 " ======== Better Whitespace ========
 autocmd BufEnter * EnableStripWhitespaceOnSave
+
+" ======== Git Gutter ========
+let g:gitgutter_map_keys = 0
+nmap ]c <Plug>GitGutterNextHunk
+nmap [c <Plug>GitGutterPrevHunk
 
 " ======== Snippets ========
 let g:UltiSnipsExpandTrigger = '<tab>'
