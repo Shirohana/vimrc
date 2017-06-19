@@ -55,6 +55,9 @@ Plugin 'airblade/vim-gitgutter'
 " Abolish.vim # i cannot drive on this yet
 " Plugin 'tpope/vim-abolish'
 
+" Emmet
+Plugin 'mattn/emmet-vim'
+
 " ======== Syntaxs ========
 Plugin 'othree/html5.vim'
 Plugin 'digitaltoad/vim-pug'
@@ -184,6 +187,10 @@ autocmd BufEnter * EnableStripWhitespaceOnSave
 let g:gitgutter_map_keys = 0
 nmap ]c <Plug>GitGutterNextHunk
 nmap [c <Plug>GitGutterPrevHunk
+
+" ======== Emmet ========
+let g:user_emmet_install_global = 0
+autocmd FileType html,css,xml,php EmmetInstall
 
 " ======== Snippets ========
 let g:UltiSnipsExpandTrigger = '<tab>'
