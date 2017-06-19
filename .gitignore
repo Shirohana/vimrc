@@ -1,0 +1,8 @@
+# Plugins
+.vim/bundle
+
+# Sessions
+.vim/sessions/
+#
+# .netrwhist
+.vim/.netrwhist
