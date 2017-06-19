@@ -200,6 +200,8 @@ syntax enable
 set background=dark
 colorscheme solarized
 
+hi! Visual  guifg=White guibg=LightBlue gui=none
+
 " Custom key mapping leader
 let mapleader = ';'
 
