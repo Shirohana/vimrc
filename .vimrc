@@ -81,9 +81,9 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 " ======== NERDTree ========
 let g:NERDTreeChDirMode = 2
 let g:NERDTreeShowLineNumbers = 1
-let g:NERDTreeAutoCenter = 1
+let g:NERDTreeAutoCenter = 0
 let g:NERDTreeShowHidden = 1
-let g:NERDTreeIgnore = ['\~$', 'yarn\.lock', '\.swp', 'node_modules']
+let g:NERDTreeIgnore = ['\~$', 'yarn\.lock', '\.swp', '\.git$', 'node_modules', '.nuxt', 'dist']
 let g:NERDTreeShowBookmarks = 1
 map <C-\>  :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in = 1
@@ -96,7 +96,7 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 let g:ctrlp_working_path_mode = 'a'
 " Ignoring (dir|file|link)s
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v(\.git|node_modules)$',
+  \ 'dir':  '\v(\.git|node_modules|\.nuxt|dist)$',
   \ 'file': '\v\.(png|jpg)$'
   \ }
 
@@ -255,15 +255,22 @@ nmap ≥     3<C-w>>
 " Reselect a visual block
 nnoremap vv gv
 
+" Middle the screen when ''
+nnoremap '' ''zz
+
 " Insert new line
 nmap zj  o<Esc>k
 nmap zk  O<Esc>j<C-e>
 
 " vertical ruler
-set colorcolumn=100
+set colorcolumn=60,100
 
 " Disable word wrap
 set nowrap
+
+" Horizontal scrolling
+nnoremap zl 4zl
+nnoremap zh 4zh
 
 set hlsearch
 set relativenumber
@@ -272,3 +279,7 @@ set cursorline
 set backspace=2
 set encoding=utf-8
 set scrolloff=2
+set foldmethod=syntax
+set foldlevelstart=20
+
+set directory=$HOME/.vim/swapfiles//
