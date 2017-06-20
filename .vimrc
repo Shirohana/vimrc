@@ -133,14 +133,10 @@ map  <Leader>N  <Plug>(easymotion-N)
 
 " replace default word searching
 map  s  <Plug>(easymotion-sn)
-map  f  <Plug>(easymotion-f)
-map  F  <Plug>(easymotion-F)
-map  t  <Plug>(easymotion-t)
-map  T  <Plug>(easymotion-T)
-" omap f  <Plug>(easymotion-fl)
-" omap F  <Plug>(easymotion-Fl)
-" omap t  <Plug>(easymotion-tl)
-" omap T  <Plug>(easymotion-Tl)
+omap  f  <Plug>(easymotion-fl)
+omap  F  <Plug>(easymotion-Fl)
+omap  t  <Plug>(easymotion-tl)
+omap  T  <Plug>(easymotion-Tl)
 
 " Repeat the last motion
 map <CR> <Plug>(easymotion-repeat)
