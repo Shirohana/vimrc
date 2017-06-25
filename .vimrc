@@ -34,6 +34,9 @@ Plugin 'terryma/vim-multiple-cursors'
 " Surrounding # surround.txt
 Plugin 'tpope/vim-surround'
 
+" Split and Join # splitjoin.txt
+Plugin 'AndrewRadev/splitjoin.vim'
+
 " Repeating
 Plugin 'tpope/vim-repeat'
 
