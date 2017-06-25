@@ -64,8 +64,9 @@ Plugin 'digitaltoad/vim-pug'
 Plugin 'wavded/vim-stylus'
 Plugin 'isRuslan/vim-es6'
 Plugin 'posva/vim-vue'
-Plugin 'HerringtonDarkholme/yats.vim'
 Plugin 'hail2u/vim-css3-syntax'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'Quramy/vim-js-pretty-template'
 
 " ======== Snippets ========
 Plugin 'SirVer/ultisnips'
@@ -186,24 +187,27 @@ nmap [c <Plug>GitGutterPrevHunk
 
 " ======== Emmet ========
 let g:user_emmet_install_global = 0
-autocmd FileType html,css,xml,php EmmetInstall
+autocmd FileType html,css,xml,php,js,ts EmmetInstall
 
 " ======== Snippets ========
 let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<S-tab>'
 
+
+" ======== Syntax and theme ========
+syntax enable
+set background=dark
+colorscheme solarized
+hi! Visual  guifg=White guibg=LightBlue gui=none
+
+autocmd FileType javascript JsPreTmpl xml
+autocmd FileType typescript JsPreTmpl xml
+
 " ======== Custom Stuffs ========
 " Replace default <Esc> for more effective typing
 noremap  <C-l> <Esc>
 noremap! <C-l> <Esc>
-
-" Set color scheme
-syntax enable
-set background=dark
-colorscheme solarized
-
-hi! Visual  guifg=White guibg=LightBlue gui=none
 
 " Custom key mapping leader
 let mapleader = ';'
