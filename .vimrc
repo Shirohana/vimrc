@@ -58,6 +58,9 @@ Plugin 'airblade/vim-gitgutter'
 " Abolish.vim # i cannot drive on this yet
 " Plugin 'tpope/vim-abolish'
 
+" Tabular
+Plugin 'godlygeek/tabular'
+
 " Emmet
 Plugin 'mattn/emmet-vim'
 
