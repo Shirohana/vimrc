@@ -277,8 +277,7 @@ nmap zk  O<Esc>j<C-e>
 inoremap II <C-o>I
 inoremap AA <C-o>A
 inoremap OO <C-o>O
-inoremap CC <C-o>C
-inoremap SS <C-o>S
+inoremap CC <C-o>S
 inoremap DD <C-o>dd
 
 " vertical ruler
