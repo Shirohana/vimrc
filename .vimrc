@@ -69,7 +69,6 @@ Plugin 'isRuslan/vim-es6'
 Plugin 'posva/vim-vue'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'leafgarland/typescript-vim'
-Plugin 'Quramy/vim-js-pretty-template'
 
 " ======== Snippets ========
 Plugin 'SirVer/ultisnips'
@@ -203,9 +202,6 @@ syntax enable
 set background=dark
 colorscheme solarized
 hi! Visual  guifg=White guibg=LightBlue gui=none
-
-autocmd FileType javascript JsPreTmpl xml
-autocmd FileType typescript JsPreTmpl xml
 
 " ======== Custom Stuffs ========
 " Replace default <Esc> for more effective typing
