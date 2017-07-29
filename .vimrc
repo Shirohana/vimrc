@@ -239,8 +239,8 @@ nmap “     :bprev<CR>
 " Better way to write & quit
 let mapleader = ','
 nmap <leader>w   :w<CR>
-nmap <leader>q   :bp <bar> bd #<CR>
-nmap <leader>W   :w <bar> bp <bar> bd #<CR>
+nmap <leader>q   :bp <bar> bw #<CR>
+nmap <leader>W   :w <bar> bp <bar> bw #<CR>
 
 " ======== Windows ========
 " Use <M-[hjkl]> (Option-[hjkl]) to jump to another window in the same direction
@@ -287,8 +287,8 @@ set colorcolumn=60,100
 set nowrap
 
 " Horizontal scrolling
-nnoremap zl 4zl
-nnoremap zh 4zh
+nnoremap zl 8zl
+nnoremap zh 8zh
 
 set hlsearch
 set relativenumber
