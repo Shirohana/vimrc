@@ -95,6 +95,7 @@ let g:NERDTreeShowHidden = 1
 let g:NERDTreeIgnore = ['\~$', 'yarn\.lock', '\.swp', '\.git$', 'node_modules', '.nuxt', 'dist']
 let g:NERDTreeShowBookmarks = 1
 map <C-\>  :NERDTreeToggle<CR>
+map æ      :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in = 1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
@@ -166,8 +167,7 @@ nnoremap <Esc><Esc> :<C-u>nohlsearch<CR>
 
 " ======== Auro Pairs ========
 let g:AutoPairsFlyMode = 1
-" re-mapping keys for iTerm2 under MacOS in insert mode
-let g:AutoPairsShortcutBackInsert = '∫' " <M-b>
+let g:AutoPairsShortcutBackInsert = '<C-b>'
 let g:AutoPairsShortcutJump = '∂' " <M-d>
 
 " No needs to remap
