@@ -41,7 +41,7 @@ Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'tpope/vim-repeat'
 
 " Auto Pairs
-Plugin 'jiangmiao/auto-pairs'
+Plugin 'shirohana/auto-pairs'
 
 " Commentary # commentary.txt
 Plugin 'tpope/vim-commentary'
@@ -63,6 +63,9 @@ Plugin 'godlygeek/tabular'
 
 " Emmet
 Plugin 'mattn/emmet-vim'
+
+" Markdown Preview
+Plugin 'JamshedVesuna/vim-markdown-preview'
 
 " ======== Syntaxs ========
 Plugin 'othree/html5.vim'
@@ -165,9 +168,10 @@ map z?  <Plug>(incsearch-fuzzy-?)
 map zg/ <Plug>(incsearch-fuzzy-stay)
 nnoremap <Esc><Esc> :<C-u>nohlsearch<CR>
 
-" ======== Auro Pairs ========
+" ======== Auto Pairs ========
 let g:AutoPairsFlyMode = 1
-let g:AutoPairsShortcutBackInsert = '<C-b>'
+" re-mapping keys for iTerm2 under MacOS in insert mode
+let g:AutoPairsShortcutBackInsert = '∫' " <M-b>
 let g:AutoPairsShortcutJump = '∂' " <M-d>
 
 " No needs to remap
@@ -193,6 +197,11 @@ nmap [c <Plug>GitGutterPrevHunk
 " ======== Emmet ========
 let g:user_emmet_install_global = 0
 autocmd FileType html,css,xml,php,js,ts EmmetInstall
+
+" ======== Markdown Preview ========
+" grip must be installed (https://github.com/joeyespo/grip)
+let vim_markdown_preview_github=1
+let vim_markdown_preview_hotkey='<CR>' " It will Override (easymotion-repeat) in .md
 
 " ======== Snippets ========
 let g:UltiSnipsExpandTrigger = '<tab>'
