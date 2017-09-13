@@ -1,3 +1,5 @@
+" YouCompleteMe
+" JavaScript support '~/.vim/bundle/YouCompleteMe/install.py --tern-completer'
 " ======== Vundle settings ========
 set nocompatible
 filetype off
@@ -67,6 +69,10 @@ Plugin 'mattn/emmet-vim'
 " Markdown Preview
 Plugin 'JamshedVesuna/vim-markdown-preview'
 
+" You Complete Me
+" https://github.com/Valloric/YouCompleteMe#installation
+Plugin 'Valloric/YouCompleteMe'
+
 " ======== Syntaxs ========
 Plugin 'othree/html5.vim'
 Plugin 'digitaltoad/vim-pug'
@@ -95,10 +101,10 @@ let g:NERDTreeChDirMode = 2
 let g:NERDTreeShowLineNumbers = 1
 let g:NERDTreeAutoCenter = 0
 let g:NERDTreeShowHidden = 1
-let g:NERDTreeIgnore = ['\~$', 'yarn\.lock', '\.swp', '\.git$', 'node_modules', '.nuxt', 'dist']
+let g:NERDTreeIgnore = ['\~$', 'yarn\.lock', '\.swp', '\.git$', 'node_modules', '^.nuxt$', 'dist', '.nyc_output', 'coverage']
 let g:NERDTreeShowBookmarks = 1
 map <C-\>  :NERDTreeToggle<CR>
-map æ      :NERDTreeToggle<CR>
+map …      :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in = 1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
@@ -109,7 +115,7 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 let g:ctrlp_working_path_mode = 'a'
 " Ignoring (dir|file|link)s
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v(\.git|node_modules|\.nuxt|dist)$',
+  \ 'dir':  '\v(\.git|node_modules|\.nuxt|dist|coverage|\.nyc_output)$',
   \ 'file': '\v\.(png|jpg)$'
   \ }
 
@@ -202,6 +208,15 @@ autocmd FileType html,css,xml,php,js,ts EmmetInstall
 " grip must be installed (https://github.com/joeyespo/grip)
 let vim_markdown_preview_github=1
 let vim_markdown_preview_hotkey='<CR>' " It will Override (easymotion-repeat) in .md
+
+" ======== You Complete Me ========
+let g:ycm_min_num_of_chars_for_completion = 99 " No annoying
+let g:ycm_auto_trigger = 1
+let g:ycm_key_invoke_completion = '<C-a>' " Invoke completion explicitly
+let g:ycm_key_list_stop_completion = ['<C-y>'] " Close completion window
+" Disable preview window
+let g:ycm_add_preview_to_completeopt = 0
+set completeopt-=preview
 
 " ======== Snippets ========
 let g:UltiSnipsExpandTrigger = '<tab>'
