@@ -81,6 +81,7 @@ Plugin 'isRuslan/vim-es6'
 Plugin 'posva/vim-vue'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'plasticboy/vim-markdown'
 
 " ======== Snippets ========
 Plugin 'SirVer/ultisnips'
