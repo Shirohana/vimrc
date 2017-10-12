@@ -63,6 +63,9 @@ Plugin 'airblade/vim-gitgutter'
 " Tabular
 Plugin 'godlygeek/tabular'
 
+" Undotree
+Plugin 'mbbill/undotree'
+
 " Emmet
 Plugin 'mattn/emmet-vim'
 
@@ -200,6 +203,15 @@ autocmd BufEnter * EnableStripWhitespaceOnSave
 let g:gitgutter_map_keys = 0
 nmap ]c <Plug>GitGutterNextHunk
 nmap [c <Plug>GitGutterPrevHunk
+
+" ======== Undotree ========
+let g:undotree_WindowLayout = 4
+nmap U :UndotreeToggle<CR>
+
+if has("persistent_undo")
+  set undodir=~/.vim/undofiles/
+  set undofile
+endif
 
 " ======== Emmet ========
 let g:user_emmet_install_global = 0
