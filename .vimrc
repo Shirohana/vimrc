@@ -1,97 +1,87 @@
-" YouCompleteMe
-" JavaScript support '~/.vim/bundle/YouCompleteMe/install.py --tern-completer'
-" ======== Vundle settings ========
-set nocompatible
-filetype off
+" ======== Plugins ======== {
+call plug#begin('~/.vim/plugged')
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" Airline: https://github.com/vim-airline/vim-airline
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+" NERDTree: https://github.com/scrooloose/nerdtree
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
-" Airline # airline.txt
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+" EasyMotion: https://github.com/easymotion/vim-easymotion
+Plug 'easymotion/vim-easymotion'
 
-" NerdTree
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+" Incsearch: https://github.com/haya14busa/incsearch.vim
+Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/incsearch-easymotion.vim'
+Plug 'haya14busa/incsearch-fuzzy.vim'
 
-" CtrlP # ctrlp.txt
-Plugin 'ctrlpvim/ctrlp.vim'
+" MultipleCursors: https://github.com/terryma/vim-multiple-cursors
+Plug 'terryma/vim-multiple-cursors'
 
-" EasyMotion # easymotion.txt
-Plugin 'easymotion/vim-easymotion'
+" Surround: https://github.com/tpope/vim-surround
+Plug 'tpope/vim-surround'
 
-" Incsearch # incsearch.txt
-Plugin 'haya14busa/incsearch.vim'
-Plugin 'haya14busa/incsearch-easymotion.vim'
-Plugin 'haya14busa/incsearch-fuzzy.vim'
+" SplitJoin: https://github.com/AndrewRadev/splitjoin.vim
+Plug 'AndrewRadev/splitjoin.vim'
 
-" Multiple Cursors # multiple_cursors.txt
-Plugin 'terryma/vim-multiple-cursors'
+" Repeat: https://github.com/tpope/vim-repeat
+Plug 'tpope/vim-repeat'
 
-" Surrounding # surround.txt
-Plugin 'tpope/vim-surround'
+" AutoPairs: https://github.com/shirohana/auto-pairs
+Plug 'shirohana/auto-pairs'
 
-" Split and Join # splitjoin.txt
-Plugin 'AndrewRadev/splitjoin.vim'
+" Commentary: https://github.com/tpope/vim-commentary
+Plug 'tpope/vim-commentary'
 
-" Repeating
-Plugin 'tpope/vim-repeat'
+" Signature: https://github.com/kshenoy/vim-signature
+Plug 'kshenoy/vim-signature'
 
-" Auto Pairs
-Plugin 'shirohana/auto-pairs'
+" BetterWhitespace: https://github.com/ntpeters/vim-better-whitespace
+Plug 'ntpeters/vim-better-whitespace'
 
-" Commentary # commentary.txt
-Plugin 'tpope/vim-commentary'
+" FZF: https://github.com/junegunn/fzf.vim
+" Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf', { 'do': './install --bin' }
+Plug 'junegunn/fzf.vim'
 
-" Signature # signature.txt
-Plugin 'kshenoy/vim-signature'
+" GitGutter: https://github.com/airblade/vim-gitgutter
+Plug 'airblade/vim-gitgutter'
 
-" Better Whitespace # better-whitespace.txt
-Plugin 'ntpeters/vim-better-whitespace'
+" EasyAlign: https://github.com/junegunn/vim-easy-align
+Plug 'junegunn/vim-easy-align'
 
-" GitGutter
-Plugin 'airblade/vim-gitgutter'
+" Undotree: https://github.com/mbbill/undotree
+Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 
-" Abolish.vim # i cannot drive on this yet
-" Plugin 'tpope/vim-abolish'
+" Emmet https://github.com/mattn/emmet-vim
+" Plug 'mattn/emmet-vim'
 
-" Tabular
-Plugin 'godlygeek/tabular'
+" MarkdownPreview: https://github.com/JamshedVesuna/vim-markdown-preview
+Plug 'JamshedVesuna/vim-markdown-preview', { 'for': 'markdown' }
 
-" Undotree
-Plugin 'mbbill/undotree'
-
-" Emmet
-Plugin 'mattn/emmet-vim'
-
-" Markdown Preview
-Plugin 'JamshedVesuna/vim-markdown-preview'
-
-" You Complete Me
-" https://github.com/Valloric/YouCompleteMe#installation
-Plugin 'Valloric/YouCompleteMe'
+" YouCompleteMe: https://github.com/Valloric/YouCompleteMe#installation
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 " ======== Syntaxs ========
-Plugin 'othree/html5.vim'
-Plugin 'digitaltoad/vim-pug'
-Plugin 'wavded/vim-stylus'
-Plugin 'isRuslan/vim-es6'
-Plugin 'posva/vim-vue'
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'plasticboy/vim-markdown'
+Plug 'othree/html5.vim'
+Plug 'digitaltoad/vim-pug'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'wavded/vim-stylus'
+Plug 'isRuslan/vim-es6'
+Plug 'posva/vim-vue'
+" Plug 'leafgarland/typescript-vim'
+Plug 'plasticboy/vim-markdown'
 
 " ======== Snippets ========
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
-call vundle#end()
-filetype plugin indent on
+call plug#end()
+" }
+
+" Starts of plugin settings {
 
 " ======== Airline ========
 set laststatus=2
@@ -99,6 +89,9 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme = 'solarized'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#show_close_button = 0
+let g:airline#extensions#tabline#show_buffers = 1
+let g:airline#extensions#tabline#show_tabs = 0
 
 " ======== NERDTree ========
 let g:NERDTreeChDirMode = 2
@@ -107,23 +100,14 @@ let g:NERDTreeAutoCenter = 0
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeIgnore = ['\~$', 'yarn\.lock', '\.swp', '\.git$', 'node_modules', '^.nuxt$', 'dist', '.nyc_output', 'coverage']
 let g:NERDTreeShowBookmarks = 1
-map <C-\>  :NERDTreeToggle<CR>
-map …      :NERDTreeToggle<CR>
+" <M-;> (Option-;)
+map …  :NERDTreeToggle<CR>
+
 autocmd StdinReadPre * let s:std_in = 1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | exe 'NERDTree' | wincmd p | endif
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | bw # | exe 'NERDTree' argv()[0] | wincmd p | endif
 
-" ======== CtrlP ========
-" Using nearest .git directory or current directory if the file is not in a
-" subdirectory of the cwd
-let g:ctrlp_working_path_mode = 'a'
-" Ignoring (dir|file|link)s
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v(\.git|node_modules|\.nuxt|dist|coverage|\.nyc_output)$',
-  \ 'file': '\v\.(png|jpg)$'
-  \ }
-
-" ======== EasyMotion settings ========
+" ======== EasyMotion ========
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 let g:EasyMotion_use_upper = 1
 let g:EasyMotion_smartcase = 1
@@ -161,14 +145,6 @@ omap  T  <Plug>(easymotion-Tl)
 " Repeat the last motion
 map <CR> <Plug>(easymotion-repeat)
 
-" ======== Multiple Cursors ========
-" just using default key mappings
-" let g:multi_cursor_use_default_mapping = 0
-" let g:multi_cursor_next_key = '<C-n>'
-let g:multi_cursor_prev_key = '<C-b>'
-" let g:multi_cursor_skip_key = '<C-x>'
-" let g:multi_cursor_quit_key = '<Esc>'
-
 " ======== Incsearch ========
 map /   <Plug>(incsearch-easymotion-/)
 map ?   <Plug>(incsearch-easymotion-?)
@@ -178,31 +154,43 @@ map z?  <Plug>(incsearch-fuzzy-?)
 map zg/ <Plug>(incsearch-fuzzy-stay)
 nnoremap <Esc><Esc> :<C-u>nohlsearch<CR>
 
-" ======== Auto Pairs ========
+" ======== MultipleCursors ========
+" just using default key mappings
+" let g:multi_cursor_use_default_mapping = 0
+" let g:multi_cursor_next_key = '<C-n>'
+let g:multi_cursor_prev_key = '<C-b>'
+" let g:multi_cursor_skip_key = '<C-x>'
+" let g:multi_cursor_quit_key = '<Esc>'
+
+" ======== AutoPairs ========
 let g:AutoPairsFlyMode = 1
 " re-mapping keys for iTerm2 under MacOS in insert mode
 let g:AutoPairsShortcutBackInsert = '∫' " <M-b>
 let g:AutoPairsShortcutJump = '∂' " <M-d>
 
-" No needs to remap
-" let g:AutoPairsShortcutToggle = '<M-p>'
-
-" Use ysiW) instead
-" let g:AutoPairsShortcutWrap = '<M-e>'
-
 " ======== Commentary ========
 " custom file type example
 " autocmd FileType apache setlocal commentstring=#\ %s
 
-" ======== Signature ========
-
-" ======== Better Whitespace ========
+" ======== BetterWhitespace ========
 autocmd BufEnter * EnableStripWhitespaceOnSave
 
-" ======== Git Gutter ========
+" ======== FZF ========
+let $FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g "" --path-to-ignore ~/.vim/.ignore'
+let $FZF_DEFAULT_OPTS='--height 20% --reverse --border --multi'
+" <M-f> (Option-f)
+nmap ƒ :Ag<Space>
+nmap <C-o> :Buffers<CR>
+nmap <C-p> :Files<CR>
+
+" ======== GitGutter ========
 let g:gitgutter_map_keys = 0
 nmap ]c <Plug>GitGutterNextHunk
 nmap [c <Plug>GitGutterPrevHunk
+
+" ======== EasyAlign ========
+nmap ga <Plug>(EasyAlign)
+xmap ga <Plug>(EasyAlign)
 
 " ======== Undotree ========
 let g:undotree_WindowLayout = 4
@@ -214,15 +202,15 @@ if has("persistent_undo")
 endif
 
 " ======== Emmet ========
-let g:user_emmet_install_global = 0
-autocmd FileType html,css,xml,php,js,ts EmmetInstall
+" let g:user_emmet_install_global = 0
+" autocmd FileType html,css,xml,php,js,ts EmmetInstall
 
-" ======== Markdown Preview ========
+" ======== MarkdownPreview ========
 " grip must be installed (https://github.com/joeyespo/grip)
 let vim_markdown_preview_github=1
-let vim_markdown_preview_hotkey='<CR>' " It will Override (easymotion-repeat) in .md
+let vim_markdown_preview_hotkey='<CR>' " It will Override (easymotion-repeat) in markdown
 
-" ======== You Complete Me ========
+" ======== YouCompleteMe ========
 let g:ycm_min_num_of_chars_for_completion = 99 " No annoying
 let g:ycm_auto_trigger = 1
 let g:ycm_key_invoke_completion = '<C-j>' " Invoke completion explicitly
@@ -236,20 +224,76 @@ let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<S-tab>'
 
+" Ends of plugin settings }
 
-" ======== Syntax and theme ========
-syntax enable
+" ======== Tabs ========
+" Create a new tab by <S-M-t> (Shift-Option-t)
+nmap ˇ :tabnew<CR>
+" Move to next tab by <S-M-]> (Shift-Option-])
+nmap ’ :tabnext<CR>
+" Move to previous tab by <S-M-[) (Shift-Option-[)
+nmap ” :tabprevious<CR>
+" Close tab by <S-M-q> (Shift-Option-q)
+nmap Œ :tabclose<CR>
+
+" ======== Buffers ========
+" Allow buffers to be hidden when modified
+set hidden
+" Create an empty buffer by <M-t> (Option-t)
+nmap † :enew<CR>
+" Move to next buffer by <M-]> (Option-])
+nmap ‘ :bnext<CR>
+" Move to previous buffer by <M-[> (Option-[)
+nmap “ :bprev<CR>
+" Writes and Quits
+let mapleader = ','
+nmap <leader>w :w<CR>
+nmap <leader>q :bp <bar> bw #<CR>
+nmap <leader>W :w <bar> bp <bar> bw #<CR>
+
+" ======== Windows ========
+" Navigating between windows by <M-[hjkl]> (Option-[hjkl])
+nmap ˙ <C-w>h
+nmap ∆ <C-w>j
+nmap ˚ <C-w>k
+nmap ¬ <C-w>l
+" Resize window by <M-[,.-=]> (Option-[,.-=])
+nmap ≠ 2<C-w>+
+nmap – 2<C-w>-
+nmap ≤ 3<C-w><
+nmap ≥ 3<C-w>>
+
+" ======== General Key-mapping ========
+" Instead <Esc> or <C-[>
+noremap  <C-l> <Esc>
+noremap! <C-l> <Esc>
+
+" Middle the screen when '' or ``
+nnoremap '' ''zz
+nnoremap `` ``zz
+
+" Insert a line before current line in insert mode
+inoremap OO <C-o>O
+
+" Go to Start/End of line in insert mode
+inoremap <C-a> <C-o>I
+inoremap <C-e> <C-o>A
+
+" Horizontal scrolling
+nnoremap zl 8zl
+nnoremap zh 8zh
+
+" ======== Theme and Scheme ========
 set background=dark
 colorscheme solarized
 hi! Visual  guifg=White guibg=LightBlue gui=none
 
-" ======== Custom Stuffs ========
-" Replace default <Esc> for more effective typing
-noremap  <C-l> <Esc>
-noremap! <C-l> <Esc>
-
-" Custom key mapping leader
-let mapleader = ';'
+" ======== Other custom stuffs ========
+set colorcolumn=60,100
+set nowrap
+set relativenumber
+set showcmd
+set cursorline
 
 " Use spaces instead tabs
 set tabstop=2
@@ -257,78 +301,7 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 
-" Resolve ` (I'm using a 60% keyboard ₍₍ (ง ˘ω˘ )ว ⁾⁾
-map  ;' `
-map! ;' `
-
-" ======== Buffers ========
-" Allow buffers to be hidden if modified
-set hidden
-" Use <M-t> (Option-t) to open an empty buffer
-nmap <M-t> :enew<CR>
-nmap †     :enew<CR>
-" Use <M-l> (Option-l) to move to next buffer
-nmap <M-]> :bnext<CR>
-nmap ‘     :bnext<CR>
-" Use <M-h> (Option-h) to move to prev buffer
-nmap <M-[> :bprev<CR>
-nmap “     :bprev<CR>
-" Better way to write & quit
-let mapleader = ','
-nmap <leader>w   :w<CR>
-nmap <leader>q   :bp <bar> bw #<CR>
-nmap <leader>W   :w <bar> bp <bar> bw #<CR>
-
-" ======== Windows ========
-" Use <M-[hjkl]> (Option-[hjkl]) to jump to another window in the same direction
-" nmap <M-h> <C-w>h
-" nmap <M-j> <C-w>j
-" nmap <M-k> <C-w>k
-" nmap <M-l> <C-w>l
-nmap ˙     <C-w>h
-nmap ∆     <C-w>j
-nmap ˚     <C-w>k
-nmap ¬     <C-w>l
-
-" Resize window
-" nmap <M-=> <C-w>+
-" nmap <M--> <C-w>-
-" nmap <M-,> <C-w><
-" nmap <M-.> <C-w>>
-nmap ≠     2<C-w>+
-nmap –     2<C-w>-
-nmap ≤     3<C-w><
-nmap ≥     3<C-w>>
-
-" Reselect a visual block
-nnoremap vv gv
-
-" Middle the screen when ''
-nnoremap '' ''zz
-
-" Insert new line
-nmap zj  o<Esc>k
-nmap zk  O<Esc>j<C-e>
-
-" Quick command in insert mode
-inoremap <C-a> <C-o>I
-inoremap <C-e> <C-o>A
-inoremap OO <C-o>O
-
-" vertical ruler
-set colorcolumn=60,100
-
-" Disable word wrap
-set nowrap
-
-" Horizontal scrolling
-nnoremap zl 8zl
-nnoremap zh 8zh
-
 set hlsearch
-set relativenumber
-set showcmd
-set cursorline
 set backspace=2
 set encoding=utf-8
 set scrolloff=2

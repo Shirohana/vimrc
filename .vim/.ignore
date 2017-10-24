@@ -1,0 +1,6 @@
+yarn.lock
+
+# Code coverage
+coverage
+.nyc_output
+coverage.lcov
