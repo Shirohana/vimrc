@@ -212,7 +212,7 @@ let vim_markdown_preview_hotkey='<CR>' " It will Override (easymotion-repeat) in
 
 " ======== YouCompleteMe ========
 let g:ycm_min_num_of_chars_for_completion = 99 " No annoying
-let g:ycm_auto_trigger = 1
+let g:ycm_auto_trigger = 0
 let g:ycm_key_invoke_completion = '<C-j>' " Invoke completion explicitly
 let g:ycm_key_list_stop_completion = ['<C-y>'] " Close completion window
 " Disable preview window
@@ -268,6 +268,9 @@ nmap ≥ 3<C-w>>
 noremap  <C-l> <Esc>
 noremap! <C-l> <Esc>
 
+" Jump to previous location (<C-o> has been mapped to :Buffers)
+nmap ø <C-o>
+
 " Middle the screen when '' or ``
 nnoremap '' ''zz
 nnoremap `` ``zz
@@ -276,12 +279,15 @@ nnoremap `` ``zz
 inoremap OO <C-o>O
 
 " Go to Start/End of line in insert mode
-inoremap <C-a> <C-o>I
-inoremap <C-e> <C-o>A
+imap <C-a> <C-o>I
+imap <C-e> <C-o>A
 
 " Horizontal scrolling
 nnoremap zl 8zl
 nnoremap zh 8zh
+
+" Searching (javascript) definitions in file
+nmap <silent> ß :let @/='^\v(\s+<bar>(\s+<bar>export\s+)?(function<bar>const<bar>let)\s+)\zs'<CR>/<C-R>/
 
 " ======== Theme and Scheme ========
 set background=dark
