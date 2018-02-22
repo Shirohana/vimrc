@@ -55,16 +55,16 @@ Plug 'junegunn/vim-easy-align'
 " Undotree: https://github.com/mbbill/undotree
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 
-" Emmet https://github.com/mattn/emmet-vim
-" Plug 'mattn/emmet-vim'
+" Emmet: https://github.com/mattn/emmet-vim
+Plug 'mattn/emmet-vim'
 
 " MarkdownPreview: https://github.com/JamshedVesuna/vim-markdown-preview
 Plug 'JamshedVesuna/vim-markdown-preview', { 'for': 'markdown' }
 
 " YouCompleteMe: https://github.com/Valloric/YouCompleteMe#installation
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+" Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
-" ======== Syntaxs ========
+" ======== Syntaxes ========
 Plug 'othree/html5.vim'
 Plug 'digitaltoad/vim-pug'
 Plug 'hail2u/vim-css3-syntax'
@@ -73,6 +73,7 @@ Plug 'isRuslan/vim-es6'
 Plug 'posva/vim-vue'
 " Plug 'leafgarland/typescript-vim'
 Plug 'plasticboy/vim-markdown'
+Plug 'mityu/vim-applescript'
 
 " ======== Snippets ========
 Plug 'SirVer/ultisnips'
@@ -98,7 +99,7 @@ let g:NERDTreeChDirMode = 2
 let g:NERDTreeShowLineNumbers = 1
 let g:NERDTreeAutoCenter = 0
 let g:NERDTreeShowHidden = 1
-let g:NERDTreeIgnore = ['\~$', 'yarn\.lock', '\.swp', '\.git$', 'node_modules', '^.nuxt$', 'dist', '.nyc_output', 'coverage']
+let g:NERDTreeIgnore = ['\~$', 'yarn\.lock', '\.swp', '\.DS_Store', '\.git$', 'node_modules', '^.nuxt$', 'dist', '.nyc_output', '^coverage$', '\.scpt']
 let g:NERDTreeShowBookmarks = 1
 " <M-;> (Option-;)
 map …  :NERDTreeToggle<CR>
@@ -182,6 +183,7 @@ let $FZF_DEFAULT_OPTS='--height 20% --reverse --border --multi'
 nmap ƒ :Ag<Space>
 nmap <C-o> :Buffers<CR>
 nmap <C-p> :Files<CR>
+autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
 
 " ======== GitGutter ========
 let g:gitgutter_map_keys = 0
@@ -202,8 +204,8 @@ if has("persistent_undo")
 endif
 
 " ======== Emmet ========
-" let g:user_emmet_install_global = 0
-" autocmd FileType html,css,xml,php,js,ts EmmetInstall
+let g:user_emmet_install_global = 0
+autocmd FileType html,css,js,vue EmmetInstall
 
 " ======== MarkdownPreview ========
 " grip must be installed (https://github.com/joeyespo/grip)
@@ -211,18 +213,22 @@ let vim_markdown_preview_github=1
 let vim_markdown_preview_hotkey='<CR>' " It will Override (easymotion-repeat) in markdown
 
 " ======== YouCompleteMe ========
-let g:ycm_min_num_of_chars_for_completion = 99 " No annoying
-let g:ycm_auto_trigger = 0
-let g:ycm_key_invoke_completion = '<C-j>' " Invoke completion explicitly
-let g:ycm_key_list_stop_completion = ['<C-y>'] " Close completion window
+" let g:ycm_min_num_of_chars_for_completion = 99 " No annoying
+" let g:ycm_auto_trigger = 0
+" let g:ycm_key_invoke_completion = '<C-j>' " Invoke completion explicitly
+" let g:ycm_key_list_stop_completion = ['<C-y>'] " Close completion window
 " Disable preview window
-let g:ycm_add_preview_to_completeopt = 0
-set completeopt-=preview
+" let g:ycm_add_preview_to_completeopt = 0
+" set completeopt-=preview
 
 " ======== Snippets ========
 let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<S-tab>'
+
+" AppleScript
+autocmd FileType applescript :inoremap <buffer> <S-CR> ￢<CR>
+autocmd FileType applescript :nmap <CR> :!osacompile -o %:r.scpt %<CR>
 
 " Ends of plugin settings }
 
@@ -315,3 +321,5 @@ set foldmethod=syntax
 set foldlevelstart=20
 
 set directory=$HOME/.vim/swapfiles//
+
+nmap <S-CR> :!osascript %
