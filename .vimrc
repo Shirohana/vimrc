@@ -171,7 +171,7 @@ let g:AutoPairsShortcutJump = '∂' " <M-d>
 
 " ======== Commentary ========
 " custom file type example
-" autocmd FileType apache setlocal commentstring=#\ %s
+autocmd FileType vue setlocal commentstring=//\ %s
 
 " ======== BetterWhitespace ========
 autocmd BufEnter * EnableStripWhitespaceOnSave
@@ -221,14 +221,16 @@ let vim_markdown_preview_hotkey='<CR>' " It will Override (easymotion-repeat) in
 " let g:ycm_add_preview_to_completeopt = 0
 " set completeopt-=preview
 
+" ======== Syntaxes ========
+
 " ======== Snippets ========
 let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<S-tab>'
 
 " AppleScript
-autocmd FileType applescript :inoremap <buffer> <S-CR> ￢<CR>
 autocmd FileType applescript :nmap <CR> :!osacompile -o %:r.scpt %<CR>
+autocmd FileType applescript :nmap <S-CR> :!osascript %
 
 " Ends of plugin settings }
 
@@ -303,7 +305,7 @@ hi! Visual  guifg=White guibg=LightBlue gui=none
 " ======== Other custom stuffs ========
 set colorcolumn=60,100
 set nowrap
-set relativenumber
+" set relativenumber
 set showcmd
 set cursorline
 
@@ -322,4 +324,9 @@ set foldlevelstart=20
 
 set directory=$HOME/.vim/swapfiles//
 
-nmap <S-CR> :!osascript %
+set lazyredraw
+set ttyfast
+set regexpengine=1
+
+" Unmap the `K`
+nmap K <Nop>
