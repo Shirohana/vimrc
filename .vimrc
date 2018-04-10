@@ -68,16 +68,18 @@ Plug 'JamshedVesuna/vim-markdown-preview', { 'for': 'markdown' }
 Plug 'othree/html5.vim'
 Plug 'digitaltoad/vim-pug'
 Plug 'hail2u/vim-css3-syntax'
-Plug 'wavded/vim-stylus'
-Plug 'isRuslan/vim-es6'
+Plug 'shirohana/vim-stylus'
 Plug 'posva/vim-vue'
 " Plug 'leafgarland/typescript-vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'mityu/vim-applescript'
+Plug 'othree/yajs.vim'
+Plug 'othree/es.next.syntax.vim'
+Plug 'gavocanov/vim-js-indent'
 
 " ======== Snippets ========
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+" Plug 'SirVer/ultisnips'
+" Plug 'honza/vim-snippets'
 
 call plug#end()
 " }
@@ -106,7 +108,8 @@ map …  :NERDTreeToggle<CR>
 
 autocmd StdinReadPre * let s:std_in = 1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | exe 'NERDTree' | wincmd p | endif
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | bw # | exe 'NERDTree' argv()[0] | wincmd p | endif
+" autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | bw # | exe 'NERDTree' argv()[0] | wincmd p | endif
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | bw # | exe 'NERDTree' argv()[0] | exe 'NERDTreeClose' | endif
 
 " ======== EasyMotion ========
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
@@ -205,7 +208,7 @@ endif
 
 " ======== Emmet ========
 let g:user_emmet_install_global = 0
-autocmd FileType html,css,js,vue EmmetInstall
+" autocmd FileType html,css,js EmmetInstall
 
 " ======== MarkdownPreview ========
 " grip must be installed (https://github.com/joeyespo/grip)
@@ -330,3 +333,12 @@ set regexpengine=1
 
 " Unmap the `K`
 nmap K <Nop>
+
+" vimdiff with diff3
+if &diff
+  nmap zj ]c
+  nmap zk [c
+  nmap dl :diffget REMOTE<CR>
+  nmap dh :diffget LOCAL<CR>
+  nmap du :diffupdate<CR>
+endif
