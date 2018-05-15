@@ -1,3 +1,11 @@
+## Deprecated
+
+> This repo was be replaced by [shirohana/environment](https://github.com/shirohana/environment/wiki/NeoVim).
+>
+> To see the **Vim** part: https://github.com/shirohana/environment/wiki/NeoVim
+
+---
+
 # Hana's vimrc repository
 
 #### Step.1 Install [vim-plug][plug]
